@@ -1,0 +1,44 @@
+@import url(https://db.onlinewebfonts.com/c/b110924bb864a845699cf644c776f538?family=FilmotypeCandy);
+@font-face {
+    font-family: "FilmotypeCandy";
+    src: url("https://db.onlinewebfonts.com/t/b110924bb864a845699cf644c776f538.eot");
+    src: url("https://db.onlinewebfonts.com/t/b110924bb864a845699cf644c776f538.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/b110924bb864a845699cf644c776f538.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/b110924bb864a845699cf644c776f538.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/b110924bb864a845699cf644c776f538.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/b110924bb864a845699cf644c776f538.svg#FilmotypeCandy")format("svg");
+}
+
+h1 {
+    font-family: "FilmotypeCandy";
+    font-size: clamp(2rem, 4vw, 5rem); /* Scales but stays within limits */
+}
+
+a {
+    font-family: "FilmotypeCandy";
+    font-size: clamp(1rem, 2vw, 2.5rem); /* Prevents extreme sizing */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+@media (max-width: 768px) { 
+    h1 {
+        font-size: 2rem; /* Smaller font for mobile */
+    }
+    a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ensure Perfect Centering at 400px */
+@media (max-width: 400px) { 
+    header {
+        flex-direction: column; /* Stacks elements if needed */
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjust font size */
+        width: 100%; /* Ensures full width */
+        text-align: center; /* Absolute centering */
+    }
+}
