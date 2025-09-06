@@ -1,0 +1,159 @@
+/* Skeleton Styles for From Wags to Whiskers */
+
+:root {
+  --brand: #4CAF50;
+  --brand-ink: #165a1a;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --bg: #fafafa;
+  --card: #ffffff;
+  --radius: 16px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --ring: rgba(76,175,80,.35);
+  --accent: #ecfdf5;
+}
+
+html, body {
+  margin: 0;
+  font: 16px/1.6 system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0 0 .5rem;
+  color: var(--brand-ink);
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+}
+.nav-links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border-radius: 999px;
+  padding: .65rem 1rem;
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(76,175,80,.25);
+  transition: background .2s, color .2s;
+}
+.btn:hover {
+  background: #43a047;
+}
+.btn.outline {
+  background: #fff;
+  color: var(--brand);
+}
+.btn.outline:hover {
+  background: #f0fdf4;
+}
+.btn:focus {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: .35rem .7rem;
+  font-weight: 600;
+  font-size: .85rem;
+  margin: 0 .25rem .25rem 0;
+}
+
+/* Sections */
+section {
+  padding: 56px 0;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+/* Grid + Cards */
+.grid {
+  display: grid;
+  gap: 18px;
+}
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+/* Hero */
+.hero {
+  background: #f7fdf8;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+/* CTA */
+.cta {
+  background: #ecfdf5;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Contact */
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+input, textarea, select {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+input:focus, textarea:focus, select:focus {
+  outline: 3px solid var(--ring);
+  border-color: var(--brand);
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #cbd5e1;
+  padding: 26px 20px;
+  text-align: center;
+}
+.footer a {
+  color: #a7f3d0;
+}
