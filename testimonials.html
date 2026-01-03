@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>From Wags to Whiskers • Pet Sitting in South Birmingham</title>
+  <meta name="description" content="Trusted, insured pet sitting in South Birmingham. Daily visits, overnights, small animal care and more. Kind, reliable, and qualified care for cats, dogs & small pets." />
+  <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    :root{
+      --brand:#4CAF50;           /* primary */
+      --brand-ink:#165a1a;       /* darker */
+      --ink:#1f2937;             /* main text */
+      --muted:#6b7280;           /* secondary text */
+      --bg:#fafafa;              /* page */
+      --card:#ffffff;            /* surfaces */
+      --accent:#fef3c7;          /* soft accent */
+      --ring:rgba(76,175,80,.35);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    h1,h2,h3{font-weight:700;margin:0 0 .5rem}
+    h1,h2{font-family:"FilmotypeCandy", system-ui, sans-serif}
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#fff,rgba(255,255,255,.9));backdrop-filter:saturate(140%) blur(6px);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px;position:relative}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .logo{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #fff 0, #ddd 50%, #bbb 100%);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo svg{width:26px;height:26px}
+    .brand h1{font-size:clamp(1.3rem, 2.5vw, 2rem);letter-spacing:.5px;color:var(--brand-ink)}
+    /* header-specific logo wrapper (keeps logo centered and contained in the header) */
+    .logo-header{position:absolute;left:50%;top:8px;transform:translateX(-50%);z-index:60;display:flex;align-items:center}
+    .logo-img{border-radius:50%;display:block;max-width:64px;max-height:64px;width:auto;height:auto;object-fit:cover}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.65rem 1rem;border:1px solid var(--brand);background:var(--brand);color:#fff;font-weight:600;box-shadow:0 6px 18px rgba(76,175,80,.25)}
+    .btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .btn:focus{outline:3px solid var(--ring);outline-offset:2px}
+
+    /* Hero */
+    .hero{position:relative}
+    .hero-outer{background:
+      radial-gradient(1200px 600px at 90% -10%, rgba(76,175,80,.08), transparent 40%),
+      radial-gradient(900px 450px at -5% 100%, rgba(76,175,80,.12), transparent 40%),
+      linear-gradient(180deg, #fff 0, #f7fdf8 60%, #fff 100%);
+    }
+    .hero .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;padding:64px 0}
+    .kicker{display:inline-block;background:var(--accent);color:#92400e;border-radius:999px;padding:.35rem .75rem;font-weight:700;font-size:.85rem}
+    .hero h2{font-size:clamp(1.8rem, 4vw, 3rem);color:var(--brand-ink);line-height:1.15;margin:.5rem 0 1rem}
+    .hero p{color:var(--muted);margin:0 0 1.25rem}
+    .hero-illus{position:relative}
+    .hero-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;display:grid;gap:12px}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:10px}
+    .badge{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:999px;padding:.35rem .7rem;font-weight:600;font-size:.85rem}
+
+    /* Sections */
+    section{padding:56px 0}
+    .section-title{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--brand-ink);text-align:center;margin-bottom:28px}
+    .grid{display:grid;gap:18px}
+
+    /* Services */
+    .services{background:#fff}
+    .service-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .card h3{margin:.25rem 0 .35rem; font-size:1.15rem}
+    .card p{color:var(--muted);margin:0}
+
+    /* Pricing */
+    .pricing{background:linear-gradient(180deg,#ffffff, #f6fbf6)}
+    .price-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .price{border:2px solid #e6f4ea}
+    .price .num{font-weight:800;font-size:2rem;color:var(--brand-ink)}
+    .muted{color:var(--muted)}
+
+    /* About */
+    .about{background:#fff}
+    .about .content{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+    .about .content img{border-radius:var(--radius);box-shadow:var(--shadow)}
+    .list{padding-left:1.1rem}
+
+    /* Testimonials */
+    .testimonials{background:linear-gradient(180deg,#fff,#fefefe)}
+    .quote-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .quote{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .quote p{margin:.25rem 0}
+    .stars{font-size:1.1rem}
+
+    /* CTA */
+    .cta{background:linear-gradient(90deg,#ecfdf5,#f0fdf4);border-block:1px solid #dcfce7}
+    .cta .box{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:grid;gap:14px;align-items:center;grid-template-columns:1fr auto}
+
+    /* Contact */
+    .contact{background:#fff}
+    form{display:grid;gap:12px;max-width:700px;margin:0 auto}
+    label{font-weight:600}
+    input,textarea,select{width:100%;padding:.75rem;border-radius:12px;border:1px solid #e5e7eb}
+    input:focus,textarea:focus,select:focus{outline:3px solid var(--ring);border-color:var(--brand)}
+    .row{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+
+    /* Footer */
+    .footer{background:#111;color:#cbd5e1}
+    .footer a{color:#a7f3d0}
+    .footer .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .small{font-size:.9rem}
+
+    /* Carousel */
+    .carousel {position: relative; width: 100%; max-width: 700px; margin: 40px auto; overflow: hidden; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);}
+    .carousel-track {display: flex; transition: transform 0.5s ease;}
+    .carousel-slide {min-width: 100%; user-select: none;}
+    .carousel-slide img {width: 100%; display: block; border-radius: 16px;}
+    .carousel button {position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: none; color: #fff; padding: 10px; border-radius: 50%; cursor: pointer;}
+    .carousel button:hover {background: rgba(0,0,0,0.7);}
+    .carousel button.prev {left: 10px;}
+    .carousel button.next {right: 10px;}
+    .carousel-dots {position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;}
+    .carousel-dots button {width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255,255,255,0.6); cursor: pointer; transition: background 0.3s;}
+    .carousel-dots button.active {background: #4CAF50;}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero .inner, .about .content{grid-template-columns:1fr}
+      .cta .box{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+    }
+  </style>
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <div class="brand" aria-hidden="false">
+          <div class="logo-header" aria-hidden="true">
+            <a href="/" aria-label="From Wags to Whiskers home">
+              <img class="logo-img" src="images/logo.png" alt="Circular green emblem with a stylised paw and whiskers for From Wags to Whiskers" loading="lazy">
+            </a>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="index.html#services" class="btn outline">Services</a>
+          <a href="index.html#pricing" class="btn outline">Pricing</a>
+          <a href="testimonials.html" class="btn outline">Testimonials</a>
+          <a href="terms.html" class="btn outline">Terms</a>
+          <a href="extras.html" class="btn outline">Extras</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+      </nav>
+      <style>
+        /* Stack header elements so the logo sits above centered buttons,
+           and allow the logo to grow beyond the original 64px limit. */
+        .site-header .nav{
+          /* force a vertical stack so buttons are always below the logo */
+          display:flex !important;
+          flex-direction:column !important;
+          align-items:center;
+          justify-content:flex-start;
+          gap:8px;
+          height:auto;
+          padding:8px 0;
+        }
+
+        /* keep the brand area full width but center its contents */
+        .site-header .nav .brand{
+          width:100%;
+          display:flex;
+          justify-content:center;
+          position:relative;
+        }
+
+        /* ensure the header logo isn't absolutely positioned anymore */
+        .logo-header{
+          position:relative;
+          left:auto;
+          top:auto;
+          transform:none;
+          z-index:60;
+          display:flex;
+          align-items:center;
+        }
+
+        /* Let the logo expand (remove previous max constraints) */
+        .logo-img{
+          max-width:none;
+          max-height:none;
+          width:auto;
+          height:96px; /* adjust as desired */
+          object-fit:contain;
+          border-radius:12px; /* keep rounded but not fully circular if image is wide */
+        }
+
+        /* Center the nav buttons beneath the logo */
+        .nav-links{
+          width:100%;
+          display:flex;
+          justify-content:center;
+          gap:1rem;
+          margin-top:6px;
+        }
+
+        /* keep links on a single line but allow wrapping */
+        .nav-links .btn{white-space:nowrap}
+
+        /* On wider screens, keep the stacked layout but mildly increase header spacing */
+        @media (min-width:920px){
+          .site-header .nav{
+        padding:12px 0;
+        gap:10px;
+          }
+          .logo-img{height:120px} /* larger logo on wide screens; remove if too big */
+          /* keep nav-links centered and below the logo on desktops as requested */
+          .nav-links{width:100%;justify-content:center}
+        }
+      </style>
+    </div>
+  </header>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+    <div class="wrap">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="grid quote-grid">
+            <div class="quote">
+                <p>"Lisa is a wonderful cat-sitter. I really appreciate knowing I will come home to find Lily happy, healthy and well-fussed. Lisa doesn't just do the necessary feeding and watering but she also takes time to play Lily's favourite games and to keep her entertained. I know my cat will have fun while I'm away, which means a great deal to me. Lisa has also been really flexible and accommodating when I've had to change plans at the last minute. She is a star, thank you Lisa!"</p>
+                <p class="muted">– L. Hickman (05.2016)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa kindly looked after our 2 beautiful pusscats, Mr Piggles and Tiger-Loaf whilst we were away for the day/night. After her initial 'meet', I absolutely loved her and felt like I'd found a new best friend - she's just FAB! When we went away I felt entirely relaxed knowing that the cats were in good care. I hate leaving them as they're needy little things but Lisa was just great. <br><br>
+                    When we got back we had a fridge magnet with one of the cats on (the other cat hid quite a lot), a lovely door hangy thing (like a 'Do Not Disturb' sign) with a different image of Mr Piggles and a bottle of milk for us! I mean, how awesome is that! Not only that, Lisa keeps a full account of times visited, duration of stay and interactions. Amazing! <br><br>
+                    Lisa, you went above and beyond and I will never use anyone else. You deserve to do wonderfully well as you go the extra step in providing love and attention to our furry friends. <br><br>
+                    A truly professional service. So, get your diary open because I'll be coming back to you very soon. Lisa, you're a star. Thank you once again. xx"</p>
+                <p class="muted">– S. Fitz (04.2016)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa visited our house twice a day for two weeks to make sure our cats were fed (as opposed to fed up) watered and fussed. And we can see from Lisa’s daily log that both our cats were around whenever she was - this is an excellent recommendation for Lisa’s cat wrangling skills, as one of our cats is a renowned wanderer and has been known to vanish for days on end, even when we’re in the house. <br><br>
+                    We got back from holiday to two happy and healthy cats, neither displaying the off-handedness we’ve seen after previous holidays, which is all thanks Lisa. <br><br>
+                    Overall, outstanding service and top value for money."</p>
+                <p class="muted">– N. Proctor (08.2015)</p>
+            </div>
+            <div class="quote">
+                <p>"Thank you for looking after Martha for us while we were on holiday. We loved reading your diary entries, and came home to a completely stress free cat, unlike the times we put her in a cattery! Thank you again."</p>
+                <p class="muted">– H. Wilson (08.2015)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa recently came to my rescue and looked after my Susie, who I had unexpectedly adopted a week earlier, and I had booked to go away for a long weekend. She did a great job of looking after Susie, cleaning out the litter tray, leaving me a diary of their time together and a delightful photo key ring of Susie, I will not hesitate to use Lisa's service again."</p>
+                <p class="muted">– J.Stowe (07.2015)</p>
+            </div>
+            <div class="quote">
+                <p>"Thank you so much for coming into our home each day to take care of our cat while we were away for a few days. It was good to know that our cat was in his own familiar territory while still getting fed and cared for. You provide such a great, caring and professional service, and I would definitely recommend your services. I loved the fact that you did a diary of events each day, and the photo keyring you left for us was a lovely touch and nice surprise. The milk you left in the fridge was really appreciated too! Oh, and thank you for watering our hanging baskets - I think they would have withered away in the hot spell we had!"</p>
+                <p class="muted">– J.Kendall (07.2015)</p>
+            </div>
+            <div class="quote">
+                <p>"It’s the second time you’ve come to my and Jimmy’s rescue at very short notice Lisa.  Thank you so much. Just to say (again) that Jimmy has been so obviously content each time – and for a hyperthyroid, 18 year old, at times very determined puss that’s quite something. And I have had real peace of mind knowing that not only had he taken his medication as prescribed but you had given him his food in exactly the way he likes it.  He was as if I had never been away which is exactly as I like it. <br><br>
+                    You took time to ensure that that you were familiar with his routine and he had clearly enjoyed the time you spent with him. And you found a way round the fact that I had inadvertently locked a crucial door (didn’t do that again!). See you again soon."</p>
+                <p class="muted">– A. Donnelly (03.2015)</p>
+            </div>
+            <div class="quote">
+                <p>"Thank you so much for the time, care and attention you gave to my pets whilst I was away on holiday recently.  I can't say enough how great it is to have finally found someone I can totally trust to keep my two indoor cats safely inside the house, and at the same time keep the hamster and guinea pigs safely locked away from them. <br><br>
+                    I could tell when you came to visit the pets beforehand that you absolutely love caring for animals as you took time to ask questions to get to know each animal's preferences and habits. You contacted me after the first visit to set my mind at rest which meant I could relax and enjoy my break, knowing my pets were happy and in safe hands.  It was so lovely to return to happy, contented pets, and to the photo magnet and diary sheet you left were lovely. The milk in the fridge for a cuppa on my return, (with its lovely welcome home message and photo of the guinea pigs!) was a lovely touch   Thank you Lisa - I will be singing your praises to all my pet-owning friends and will definitely come to you for help next time I go away!"</p>
+                <p class="muted">– N. Heeley (02.2015)</p>
+            </div>
+            <div class="quote">
+                <p>"This was the first time I had used Lisa's service and everything went smoothly from the very first contact.  Lisa reassured me on her visit to the house in terms of the service she offered and the questions she asked to find out about Jenny.  Upon returning home it was lovely to have a relaxed and stress free cat who had been able to stay in her own house.  Jenny had clearly been well looked after with lots of cuddles.  The little extras of the fridge magnet and photos was a lovely touch and the pint of milk was very welcome for a cup of tea in the early hours of the morning!  I would definitely recommend From wags to whiskers to my friends."</p>
+                <p class="muted">– L. Foster (12.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"Thank you for looking after Meg and Mog so well. I hated leaving them over the holidays, but was very pleased that you were able to pass on Christmas cuddles for us! They were able to stay in their own home, and that is important to us. We got them from Cats Protection and I don't like the idea of disrupting them again by putting them in a cattery as Mog especially gets nervous when she goes out. Returning to a day by day report and the extra bits -milk, photos, etc. was a great touch and made us feel a whole lot less guilty! We will definitely be in touch next time we go away. Thanks again, Lindsay, Mark, Meg and Mog"</p>
+                <p class="muted">– L. Mason (12.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa came highly recommended by a friend who has used her pet sitting service many times. From the first exchange of our emails I knew I really liked Lisa and warmed to her straight away.  When Lisa came to meet us I instantly knew everything was going to be fine and that I'd found the most professional, loveliest lady to look after my precious boys.  This feeling was further concreted when the cats came to meet Lisa for themselves, her reaction on seeing them gave me all the encouragement I needed and I knew my boys would be looked after purrrrrrrfecty.  I'd written many notes about the boys habits and requirements and even though there was a lot to take in, Lisa assured me nothing was too much trouble. So after meeting Lisa and waving her off, for once I actually started to look forward to my break away rather than dreading it. <br><br>
+                    On our return we found three very contented boys and we couldn't have been happier ourselves.  Lisa went above and beyond to look after Zachary, Dexter and Dylan and she stayed so much longer than the advertised half hour visit to give each of them some love and company.  We were tickled pink with the gorgeous little fridge magnet with Dexters face on, it was such a special touch and the milk in the fridge was very welcome.  There was also lots of photos of the boys on a sheet of paper and what they had done on their 'holidays' and also a diary of what Lisa and the boys had done while she was here and the times she came and left. This is how I know she spent so much more time with them than I ever would have expected and I can't thank her enough. <br><br>
+                    My cats are loved more than I could ever express and leaving them is very difficult for me, but I am thrilled to be able to say that I've found a true gem in Lisa and I know I can now book some more breaks without having to worry about the boys.  I can't recommend her enough, she is absolutely fabulous!! <br><br>
+                    From Zachary, Dexter and Dylan and their very happy mummy, Jenny"</p>
+                <p class="muted">– J. Tozer-Jones (09.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"This was the first time we had used a cat sitter, we usually take our cat Harvey to our local cattery, but as he is almost 11 years old now, he seemed upset at being moved around to a strange place.  Also my husband had tomatoes which needed to be watered every day, so the choice was easy to make, as Lisa gave us the freedom to go away for a few days happily knowing Harvey would be well looked after and the tomatoes would flourish !! Lisa is so caring and thoughtful, when we arrived back home there was a lovely gift of a keyring with Harveys photo and a fresh pint of milk to greet us. Together with a daily report sheet showing how each day had gone. <br><br>
+                    We would both highly recommend Lisa for the perfect service she provides!"</p>
+                <p class="muted">– J. & J. Barson (08.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"Thank you so much for taking such good care of Santa! The daily diary was such a treat to read! The milk and photo were such a lovely idea! Thank you so much! We will be in contact again for sure!"</p>
+                <p class="muted">– T. & O. Evans (08.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"I have absolutely no hesitation in recommending Lisa and her pet sitting service.  It was above and beyond what I expected, with a full diary of the week and how my cats had been, also the welcome home card and milk in the fridge were great extras and much appreciated.<br><br>
+                    I was concerned about one of cats who can be nervous around people he doesn't know, but I needn't have worried Lisa as was great with him and he was her best friend by the end of the week.<br><br>
+                    Lisa visited our home before we went away and got a full picture of the cats, their behaviour and how we would like her to look after them.  I felt comfortable with her coming and going and the additional security was reassuring.<br><br>
+                    I have no doubt that if there had been a problem Lisa would have the knowledge to deal with it and her strong links to Cramar through the vets and her volunteering are a great back-up.<br><br>
+                    I will always go to Lisa first to look after the cats when I'm away."</p>
+                <p class="muted">– E. Barrett (07.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"This is the second year that I have used 'Wags to Whiskers' and again the service was outstanding. Lisa's dedication to all of our cats is truly amazing. I know my three cats (Sooty, Rosie and Charlie) are in safe hands and are looked after with the care that they expect. Nothing is too much trouble for Lisa and I would highly recommend the service that she offers. I know our cats will look forward to seeing her next year. <br><br>
+                    A big thank you Emma, Christine and Sooty, Rosie and Charlie"</p>
+                <p class="muted">– E. Hughson (07.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"We have never used a cat sitter before so were a bit apprehensive especially as our youngest cat, Spookie, is very shy and normally hides from strangers! Nothing to worry about though as Lisa messaged  us a pic of Spookie sat on the stairs after her first visit, he was not hiding under the bed :). We came back off our hols to 4 happy cats so we would definitely recommend Lisa to look after your pets. The milk in the fridge upon our return is a lovely touch too!"</p>
+                <p class="muted">– T & P. Davis (06.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"We've used Lisa a couple of times now to care for our cat Ollie when we are away on holiday. She is totally reliable and professional, we cannot recommend her highly enough and would never consider using anyone else to care for our much loved boy whilst we are away from home! It is clear that Lisa adores animals and Ollie took to her immediately when she initially came to introduce herself to him. Both times we have arrived back home to a happy, well cared for and contented little chap - you can just tell when your pet has been happy whilst you've been away from them! We have absolutely no hesitation in recommending Lisa, we're so glad we found From Wags to Whiskers!"</p>
+                <p class="muted">– L. Evans (05.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"We really appreciated that Lisa went above and beyond for us to find little Cobalt when he went missing and maintained excellent communication with us while we were away – we knew that they were safe and happy the whole week. The little touches were so kind, the keyring and pint of milk with Tungsten’s photo really made us smile. We are so grateful to you for such a professional and friendly service."</p>
+                <p class="muted">– J.Brannon (4.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"If you are looking for a pet sitter, who is reliable, caring and professional, contact Lisa fromwagstowhiskers.co.uk, then relax, you have just cotacted the perfect person for the job. I needed a dog walker/feeder and someone I could trust with my dog Daisy, at very short notice. Lisa agreed to help out even though I explained that I have already had dog walkers who we are really pleased with, but needed someone to help out over just a two day period. Whilst talking to Lisa on the phone I felt that things would be fine. We arranged for Lisa to coe and meet us and Daisy, and straight away I was able to  relax. Lisa was very professional and noted all Daisy's likes/dislikes and her quirky ways, like her taking a dislike to peoples shoes in the house and trying to bite their toe caps if given the chance (Daisy I mean not Lisa) and yes Daisy did manage to get a swift nip of the offending toecap. Lisa has a lovely calm energy about her and she is really easy to like. When we arrived home after Lisa's first day with Daisy, Lisa had left a full report of Daisy's activities, where she went for her walk, when she was fed, etc. and even that Daisy had decided Lisa's toecaps would be spared the normal obligatory nip. The following day Lisa had again given us a full report again on her activities, and she had even taken a photograph of Daisy which was made into a fridge magnet, a really lovely touch! <br><br>
+                    I will definitely call Lisa again, should I need her and I reccommend that you should do the same, then you can relax in knowing that your pet couldn't be in  better hands!"</p>
+                <p class="muted">– D & G. White (01.2014)</p>
+            </div>
+            <div class="quote">
+                <p>"I found Lisa through a friend who had recommended her. The service was professional from start to finish. Lisa came over to register and meet Harold before we went away and when I returned from my time away I had a little report from each day so I knew what Harold had been up to and even a pint of milk in the fridge. Lisa is very friendly and clearly loves cats so would not hesitate to use her again or recommend to others."</p>
+                <p class="muted">– Z. Brown (12.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"We returned last night to find Molly very relaxed and not really bothered that we had been away at all! She is certainly more relaxed and content than when we have picked her up from a cattery. We will have no hesitation in calling on your services again - your attention to detail is exceptional -  we thank you for providing such an excellent service. Molly sends her love and is looking forward to your next visit. We are all very happy and content!!"</p>
+                <p class="muted">– D & R Thornton (09.13)</p>
+            </div>
+            <div class="quote">
+                <p>"We left our three cats Sooty, Rosie and Charlie for two weeks. We were very worried about leaving them but as soon as we met Lisa I knew the cats would be fine. Charlie particulary loved Lisa straight away.We had no need to worry all cats were cared for with lots of love and care off Lisa. She is dedicated to her work and we would definitley use her again and we would recommend her to anybody. A great service thank you!"</p>
+                <p class="muted">– E. Hughson (08.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"I would like to thank Lisa for looking after Samba so well and for getting me some milk as 'an added bonus' as I really missed a cup of tea! Our neighbour Jackie recommended Lisa and I am so glad she did! Thanks again!"</p>
+                <p class="muted">– S. Yarwood (08.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"I'm very grateful for the fab service; the girls have been looked after superbly, and will be recommending you to others and using you again without any hesitation. Thanks for the prezzie as well... that was wicked :)"</p>
+                <p class="muted">– M. Onley (08.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa stepped in at the last minute to give excellent care and attention to our moggy and pedigree cats, both of which have very particular routines!  She was flexible, professional and true to her word at all times and I would trust her with absolutely anything. This is the longest time our cats had been without us and I was quite anxious about them both, but there was no need to worry, they were very content on our return and it was clear to see that they had had more than just food! Lisa was so attentive, she bought extra cat food and added on extra days when we were delayed, took photos, made a fridge magnet and wrote up detailed notes each day.  Even better, she bought me my favourite soya milk for our return!! Nothing but a darling, Lisa comes highly recommended!!"</p>
+                <p class="muted">– F.Collins (08.13)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa was very friendly & professional and gave an outstanding pet sitting service for my cat Thomas. Her prices are very reasonable and worth every penny as she also thinks of the little extra things that I had forgotten about. Lisa wrote a daily diary about her visits to give me that extra peace of mind that my cat was getting the care and affection he needed whilst I was away. I highly recommend her services & I wouldn’t hesitate to use From Wags to Whiskers again."</p>
+                <p class="muted">– C.Brennan (07.13)</p>
+            </div>
+            <div class="quote">
+                <p>"A gold star pet-sitting service! Very professional, despite having to deal with the quirks of a house undergoing renovation! The extra touches - the "welcome home" card and photos, "school report" and pint of milk - were also very thoughtful. Thank you, from two happy cats!"</p>
+                <p class="muted">– N.Marcel (05.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"Cat sitting has been taken to a whole new level at Wags to Whiskers. Coming back from holiday to two such contented and happy cats is something I had not experienced before. The daily diary sheet gives you a great insight into how Lisa's caring, professional yet personal touch developed a nice relationship with my cats. I will certainly be using the service again and would not hesitate to recommend Wags to Whiskers to others."</p>
+                <p class="muted">– M. Ricketts (05.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"I have recently moved to Bromsgrove and therefore needed a new pet sitter to look after my cats if we are ever away.  A friend recommended Lisa from Wags to Whiskers, and I have to say that I am more than pleased with the service provided! <br><br>
+                    The first time that we needed Lisa to cat sit, she came to the house to meet the cats, get the key etc. and I instantly felt that I could trust her to come to look after the cats in my absence.  The cats seemed more than comfortable with Lisa too which was reassuring!<br><br>
+                    I also like to see the feedback as to how they got on while I was away, and if they were well behaved! The other goodies left by Lisa during each visit are also gratefully received!!!  I wouldn't hesitate to recommend her! :-)"</p>
+                <p class="muted">– E.Walford (04.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"Well what can we say, you did a fantastic job looking after our little dog Sizzles.<br><br>
+                    The little text on saturday telling us she was ok was a nice touch and thought, but then when we finally arrived home we found your little report about how she had been, all the things she and you had done together (you were honest about her being shy at first) but then came out of her shell for you.<br><br>
+                    The milk and the tag with a picture of Sizz was a sweet touch, and so nice to have fresh milk on our return from our weekend away.<br><br>
+                    I did not open the envelope until the next day because I just though it was the keys, but what a mistake that was, the fridge magnet of Sizz was lovely.<br><br>
+                    Lisa you went above and beyond for our little Sizzles, and we will be using you again and telling our friends what a lovely, kind, caring lady you are. Thank you so much, we are very, very happy with everything you did for us and Sizzles :)"</p>
+                <p class="muted">– J.McCartney (03.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa was recommended by a friend so when I was going away for the weekend I asked her to care for my two cats and two dogs between Saturday morning and Sunday night. Lisa visited twice a day to walk and feed the dogs and also check on and feed the cats and give them a fuss. She had to cope with heavy snow and ice, but she still managed to provide an excellent and meticulous service, and walked my dogs separately as I had requested. I could see when I came home that my pets had not been phased at all by someone relatively unfamiliar coming into the house. They looked happy and contented. Lisa had also kindly fed the wild birds in my garden. Lisa goes above and beyond the call of duty: on my return home I found a new key ring with a picture of my collie Riddley attached, and a bottle of milk from ‘Rufus’ in the fridge! Plus a full written report on everything she’d done with my animals and a welcome home card too! Lisa is completely devoted to her work and has a natural affinity with animals. <br><br>
+                    Nothing is too much trouble for her and she really understands the anxieties owners feel when they leave their pets. I would have no hesitation in recommending her and will be using her again! Thank you Lisa!"</p>
+                <p class="muted">– Deborah, Rufus, Riddley, Orlando and Tosca (01.2013)</p>
+            </div>
+            <div class="quote">
+                <p>"I would have no hesitation in recommending Lisa Dick. Her pet service is brilliant. Lisa visits our two spaniels 5 days a week. She keeps us up to date with what they have been up to each day. My dogs Evie and Millie adore Lisa and it is very evident how much she loves animals. She is very flexible and adapted to changes following one of our dogs operation. Lisa is able to offer a wide variety of pet services and I know that my dogs are well looked after and cared for when they are in her care. A wonderful pet service, keep up the fantastic work."</p>
+                <p class="muted">– S&A. Jones (12.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"We were recommend Lisa by a work colleague. We were going on our holiday and really didn’t want to put our two cats into the cattery as last time we had to take the one to the vets when we got back as she was really poorly, had lost weight and seemed very stressed. <br><br>
+                    We cannot recommend Lisa or the service she provided enough.  She was excellent.  When we returned this time we came home to two very happy and chilled cats. She wrote daily reports, which we loved reading and could relate to their little antics, she even went to the trouble to brush one of them as she looked a bit tatty. <br><br>
+                    The little gifts that were left were also such a nice touch, together with the milk <br><br>
+                    Thank you Lisa, you were brilliant, wouldn’t hesitate to recommend you and both Izzy and Abbey can’t wait to see you again."</p>
+                <p class="muted">– J.Morris (10.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"We were recommended to contact Lisa when we were due to go on holiday as our daughter had had problems caring for our house rabbits due to her house mate's allergy (!) We were a little nervous as our rabbits had only recently been rehoused together following spaying and did not want to upset them again. Lisa came round and instantly put our minds at rest; even though they are rabbits and not as 'needy' as dogs and cats, Lisa bothered to find out what they were like and what their preferences are with regards to care, which was very reassuring. <br><br>
+                    I can now go away with total peace of mind knowing that they are going to have a nice time too and, due to the daily diary she keeps, I know what mischief that they have been up to while I am away! Lisa provides a wonderful service and is very flexible to meet the needs of you, as owners, and the pets themselves. I cannot recommend her highly enough, and I am sure that if Pebble and Willow could talk, they would agree. "</p>
+                <p class="muted">– F.Shae (10.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa became a saviour to me and my family. My sister, having to go into hospital at short notice, was left with 3 cats and no one to care for them. Lisa stepped in and 'saved the day'.  She kept in regular contact with me about how my sister's house and cats were fairing.  She is totally honest and reliable. A wonderful service from a lovely person at a reasonable cost.  I have no hesitation in recommending Lisa and "From Wags to Whiskers."</p>
+                <p class="muted">– D. Crawford (09.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"I'm more than happy with the service you provided - and so is Wallace! I was very pleased to return home after my holiday to find a very chilled out and happy cat, it really does suit him to be at home so much more than in the cattery. I loved the extra, very thoughtful, touches you added, such as the diary, photos and little gifts and milk in the fridge - thank you very much again - Wallace is now looking forward to my next holiday!"</p>
+                <p class="muted">– M. Jacob (09.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"What a wonderful service, both cats seemed very happy to stay in their own surroundings. We would have no hesitation in recommending your service to family and friends and we have no hesitation in contacting you again in the future! Excellent service, thank you Lisa!!"</p>
+                <p class="muted">– J. Crawford (08.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa looked after our two cats (one of which is not in the best of health) with great care and absolute professionalism. We had peace of mind and felt confident about leaving them whilst we were away. I can strongly recommend her for any of your pet sitting requirements."</p>
+                <p class="muted">– E. Cooke (08.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"We would be the first to admit that our 7 year old cat is quite spoiled and set in his ways, so we usually have to rely on our patient and understanding family members to look after him whilst we are away. This year, we had to make alternative arrangements and were quite nervous about doing so. Then we found Lisa! <br><br>
+                    The service which Lisa provided was absolutely faultless, from the moment when we first emailed her to make enquiries to the moment when we arrived home from our holidays. Lisa clearly understands pets and their relationships with their owners. We received regular updates by text, including photos, whilst we were away.  We returned to find a full daily report on Seamus’ comings and goings and a very contented and relaxed cat. The fresh pint of milk in the fridge for a welcome cuppa is also testament to the quality and thoughtfulness of Lisa’s service – she went above and beyond the call of duty in many respects. We are delighted with the service which we received from Lisa. We would definitely employ her again and we strongly recommend the services of this efficient, reliable and caring professional."</p>
+                <p class="muted">– A. Bates (08.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"We had never used a pet-sitter before but Lisa was recommended to us by a friend called Pumpkin. We had our reservations as Bella is nervous around strangers and Flo is a real monkey but we met Lisa and decided to take the plunge. Lisa obviously has a way with animals as Bella became an instant friend - even cracking out her meercat impression for her! Flo was as naughty as ever but nothing seemed to be too much trouble for Lisa! We returned home to two very contented, relaxed pussy cats and a 'school report' which made for a very entertaining read! Thank you Lisa!"</p>
+                <p class="muted">– A&T. Jones (08.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"I would unhesitatingly recommend Lisa and From Wags to Whiskers. She clearly loves animals and understands them very well. Professional, reliable and compassionate, she went well above and beyond what we expected of her in every way, and for a very reasonable fee, too! She even put fresh milk in the fridge for when we got back! A full written report of how our cat Smudge had been on each day she visited was another thing we loved. It was so reassuring to know he was in safe hands in his own home and meant we could really relax and enjoy our holiday. I will definitely use her again. it's a relief to know we can call on her. Friends and family aren't always around to step in. A superb service. Thank you. <br><br>
+                    From the Jones Family, Stirchley, (and Smudge)"</p>
+                <p class="muted">– E. Jones (08.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"I would just like to say a big thank you for looking after my cat Fang whilst I was on holiday.  I was a bit apprehensive about having someone I didn’t know come into my home and look after my pet! However, I wouldn’t hesitate to recommend 'From Wags to Whiskers' to my friends now and would definitely use again.  I could see from the diary account everything that Fang had been up to in my absence and can tell from all the nice little touches (thanks for the milk in my fridge!) that this is someone who really cares and loves their job! Thanks!"</p>
+                <p class="muted">– L. Jones (07.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"Hello! Our names are Squeak and Whisper and Lisa came to look after us when Mum went on holiday and it was just the best thing she ever did for us!  We had been to a local cattery once before for a couple of days but we were frightened because we are a shy pair of kitties and it was a strange place.  Mum didn’t want to send us back there but she didn’t know what else to do whilst she went on holiday!  Then Mum’s friend told her about Lisa and her love for all things furry and she gave her a call. Lisa came to visit us before Mum went away and she asked loads of questions about our little habits so that she knew all about us before Mum left.  Whilst she was away, Lisa kept us fed and clean and tidy and we were so happy to be at home instead of in a cattery.  She wrote Mum a daily report on our behaviour so we had to be good girls and she even opened and closed the curtains morning and night so we had a bit of privacy!  We had some nice little ‘kittie chats’ with Lisa and when we posed for the odd photo she sent it on to Mum to show her that we were being good girls!  We loved Lisa looking after us and we want her to come back again when mum goes on holiday next!  Mum says she would recommend Lisa to anybody to guarantee that their pets are loved and cared for – doing just what she promises: “providing love and care when you can’t be there”!"</p>
+                <p class="muted">– Squeak & Whisper c.o A. Langdon (07.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"Lisa is reliable and adaptable. She looks out for/after your pet as if it were her own. She takes time out to get to know your dog and I feel comfotable and confident when I am at work that my dog is in the best possible care!"</p>
+                <p class="muted">– J.J. Cook (06.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"My kitten, Pumpkin, was only 11 months old and I was due to take a 2 week holiday. I was in a real dilemma about whether to put him in a cattery, have him stay with a friend or let him stay in his own home. Lisa was recommended to me and, having returned just yesterday, I can say it was the best decision ever! I have come home to a very happy, contented and well-looked after cat. He has not had the stress of being taken away from his home and he has received all the love and attention he needs, especially with him still being so young. It was so reassuring to know that he formed a close bond with her very quickly (and for quite a timid cat, that is a testament to Lisa's clear love for and experience of animals). Having Lisa visit my house has also meant I have had someone to check things are secure. She even text me some information I had left behind - she really went above and beyond! I have already recommended Lisa to several friends which I think says it all about how impressed I was with the service she has provided. Pumpkin and I are extremely happy customers!"</p>
+                <p class="muted">– R. Creed (06.2012)</p>
+            </div>
+            <div class="quote">
+                <p>"This is a fabulous pet sitting service you might like to take advantage of if you are near Birmingham. I am in awe of her love and devotion to all God’s creatures, and without hesitation recommend her to you.Thanks Denise xxxx"</p>
+                <p class="muted">– D. Clissett (03.2012)</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="wrap" style="padding:26px 20px">
+      <div class="cols">
+        <div>
+          <div class="brand" style="margin-bottom:8px">
+            <strong>From Wags to Whiskers</strong>
+          </div>
+          <p class="small">South Birmingham • CRB/DBS checked • Insured • Pet first aid trained</p>
+        </div>
+        <div>
+          <p class="small">Service areas: Kings Norton, Northfield, Bournville, Catshill and nearby. If you’re just outside, please ask - I’ll always help if I can.</p>
+          <p class="small">Email: <a href="mailto:fromwagstowhiskers@icloud.com">fromwagstowhiskers@icloud.com</a></p>
+        </div>
+        <div>
+          <p class="small">© <span id="y"></span> From Wags to Whiskers. All rights reserved.</p>
+          <p class="small">Last updated: January 2026</p>
+          <p class="small"><a href="terms.html">Terms</a></p>
+        </div>
+      </div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  </footer>
+</body>
+</html>
