@@ -249,7 +249,126 @@
       <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/1emSz3Mlw4J9aMmzbIr94Z?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </section>
-  
+  <section class="book-showcase hero-outer" aria-labelledby="book-title">
+    <style>
+      /* Mobile tweaks: stack columns, push book image lower and limit its height so it doesn't overflow the viewport */
+      @media (max-width: 920px) {
+        .book-showcase .inner { grid-template-columns: 1fr !important; align-items: start !important; }
+        .book-showcase .hero-illus { order: 2; margin-top: 18px; }
+        .book-showcase .hero-card img {
+          max-height: calc(100vh - 220px); /* keep image within visible area (adjust 220px if header/footer sizes change) */
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+    </style>
+
+    <div class="wrap" style="padding:24px 0;">
+      <div class="inner" style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;">
+        <div>
+          <h2 id="book-title">On a whisker and a prayer - my debut book!</h2>
+          <p>A moving, uplifting true story of a girl who loves animals.<br><br>
+            After qualifying as a Graphic Designer at University, she must then relocate to start a new job as a packaging designer at a chocolate factory. She is faced with a number of set backs, along with health issues, but as it turns out, being made redundant was to be a blessing in disguise!<br><br>
+            A tale of ups and downs, laughter and tears, redundancy, health issues and the amazing power of pets!</p>
+          <p><a href="https://amzn.eu/d/aSulFuy" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top:12px;display:inline-block;">Buy on Amazon</a></p>
+          <p class="small" style="margin-top:12px;">Prefer to purchase directly? Email <a href="mailto:fromwagstowhiskers@icloud.com">fromwagstowhiskers@icloud.com</a> to arrange a purchase. <br>(Book costs £5.99 plus £3.00 postage to anywhere in the UK.)</p>
+          <p class="small" style="margin-top:12px;">You can also buy in person (no postage) from Cramar Cat Rescue.</p>
+        </div>
+
+        <div class="hero-illus" aria-hidden="false">
+          <div class="hero-card" role="img" aria-label="Book cover: On a whisker and a prayer" style="padding:12px;">
+            <a href="https://amzn.eu/d/aSulFuy" target="_blank" rel="noopener noreferrer" style="display:block;">
+              <img src="images/On a whisker and a prayer.jpg" alt="Book cover of 'On a whisker and a prayer'" style="width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);display:block;object-fit:cover;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book reviews / feedback -->
+  <section class="testimonials hero-outer" aria-labelledby="reviews-title" style="padding-top:12px;">
+    <div class="wrap" style="padding:20px 0;">
+      <h2 id="reviews-title" class="section-title" style="margin-bottom:12px;">Reader reviews</h2>
+
+      <!-- Individual reviews -->
+      <div class="quote-grid grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>P. Jones-Cook</strong>
+            </div>
+          </div>
+          <p>"A truly heartwarming story of highs, lows, hope and everyday Furry Things. Beautifully written - I laughed, cried in equal measure with every anecdote. "</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>E. Cooke</strong>
+            </div>
+          </div>
+          <p>"We laughed and cried as a family last night when we read your book. Bless you - you are one remarkable lady!!! "</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>P. Rowe</strong>
+            </div>
+          </div>
+          <p>"I have read and enjoyed your book, it is a very poignant and uplifting life story. It seems we both have been blessed by the angels over hidden health issues. Your friends and clients, Cheeky, Paul and late friend Jessie cat. "</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>P. Spencer</strong>
+            </div>
+          </div>
+          <p>"Read your book and found it to be just like you. Determined, passionate about animals and a great sense of humour. Loved the photo section. It made me realise that sometimes the rescue animals are in fact rescuing us! A great read!"</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>W. Branson</strong>
+            </div>
+          </div>
+          <p>"Reading on a whisker and a prayer you follow Lisa on her uplifting and inspiring journey as she experiences the highs and lows of setting up her business. You get a glimpse of the lighter side of pet care and rejoice in the characters she introduces you to. After finishing her story you too will believe that you can follow your dreams."</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>L. Hayes</strong>
+            </div>
+          </div>
+          <p>"Me and Mom both read your book when we were in Naples Italy, it was fantastic! You’re such an inspiration and we’re so proud of you and everything you’ve accomplished and achieved 😊 You’re a wonderful person!"</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>W. Duffy</strong>
+            </div>
+          </div>
+          <p>"I absolutely love the book, it’s so uplifting and real. I remember so well lots of the events happening. Getting your diagnosis and the fear your Mom had crying on the phone. Remember you telling me about Ginge and changing nappies! I’m so lucky to know you Lisa, to know you is to love you. Your an inspiration 😘x"</p>
+        </article>
+
+        <article class="quote card" aria-label="Review by Claire" tabindex="0">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div>
+              <strong>A.V. Dick</strong>
+            </div>
+          </div>
+          <p>"I read this booķ and thoroughly enjoyed it. Working with animals, especially cats is very rewarding and you learn something new every day. The book was very amusing and emotional at times. Beautifully written, a good read."</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="wrap" style="padding:26px 20px">
@@ -285,7 +404,7 @@
   .btn {
     white-space: nowrap; /* Prevent text from breaking inside buttons */
   }
-  .hero.hero-outer, .about, .carousel-section, .services, .pricing, .cta, .contact, .footer, .spotify-embed {
+  .hero.hero-outer, .about, .carousel-section, .services, .pricing, .cta, .contact, .footer, .spotify-embed, .book-showcase.hero-outer, .testimonials.hero-outer {
     padding: 20px 20px;
   }
   </style>
