@@ -139,6 +139,18 @@
       overflow-x: hidden; /* Prevent horizontal scrolling */
       width: 100%; /* Ensure the content fits within the viewport */
     }
+
+    @media (max-width: 768px) {
+      .challenges div {
+        flex-direction: column;
+      }
+      .challenges ul {
+        max-width: 100%;
+      }
+      .challenges div > div {
+        max-width: 100%;
+      }
+    }
   </style>
   <header class="site-header">
     <div class="wrap">
@@ -237,6 +249,89 @@
       <h2>Extras page</h2>
       <p>This page is dedicated to different adventures my life has taken me on!</p>
       <p>Feel free to do your research!</p>
+    </div>
+  </div>
+</section>
+<!-- Challenges and Medals Section -->
+<section class="challenges" style="text-align: center; background: var(--bg); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); max-width: 1000px; margin: 40px auto;">
+  <h2 style="color: var(--brand-ink);">Challenges and Medals</h2>
+  <p>Over the years, I've challenged myself with various running and cycling events, from marathons and half marathons to virtual challenges!</p>
+  <p>Here are the challenges I've completed, along with their associated medals (22!):</p>
+
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+    <!-- List of Challenges -->
+    <ul style="list-style: disc; padding-left: 20px; text-align: left; max-width: 100%; line-height: 2;">
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">30 miles MS Society bike ride</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">26.2 miles Moonwalk London</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">30 miles virtual MS Society</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">13.1 miles Half Moonwalk London</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">80 miles virtual Harry Potter 1</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">75 miles virtual Harry Potter 2</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">26.2 miles Moonwalk London</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">26.2 miles Moonwalk Edinburgh</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">13.1 miles EDF Cramar Cat Rescue</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">26.2 miles Moonwalk Edinburgh</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">26.2 miles Moonwalk London</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">40 miles virtual London</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">33 miles virtual Paris</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">13.1 miles Half Moonwalk London</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">40 miles virtual New York</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">75 miles virtual Harry Potter 3</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">70 miles virtual Harry Potter 4</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">13.2 miles Half Moonwalk Edinburgh</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">30 miles virtual Corpse Bride</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">100 miles virtual Madagascar</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">90 miles virtual Arctic Circle</span>
+      </li>
+      <li style="margin: 10px 0;">
+        <span style="font-weight: bold;">80 miles virtual Galápagos Islands</span>
+      </li>
+    </ul>
+
+    <!-- Image of Medals -->
+    <div style="max-width: 40%;">
+      <img src="images/medals.jpeg" alt="Collection of medals earned from various challenges" style="max-width: 100%; height: auto; border-radius: var(--radius);">
     </div>
   </div>
 </section>
